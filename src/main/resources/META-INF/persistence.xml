@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+  version="2.1">
+
+  <persistence-unit name="ProyectoPU">
+    <provider>org.hibernate.ejb.HibernatePersistence</provider>
+   	<jta-data-source>java:/PostgresDS</jta-data-source>
+    <!--<jta-data-source>java:/MySqlDS</jta-data-source>-->
+	<class>com.proyecto.ec.domain.Atencion</class>
+	<class>com.proyecto.ec.domain.CentroAtencion</class> 
+	<class>com.proyecto.ec.domain.Enfermedad</class>
+	<class>com.proyecto.ec.domain.Paciente</class>
+	
+    <properties>
+      <property name="hibernate.hbm2ddl.auto" value="update" />
+
+      <!--  <property name="hibernate.show_sql" value="true"/>
+	  <property name="hibernate.format_sql" value="true"/>
+	  <property name="hibernate.use_sql_comments" value="true"/>-->
+    </properties>
+  </persistence-unit>
+</persistence>
